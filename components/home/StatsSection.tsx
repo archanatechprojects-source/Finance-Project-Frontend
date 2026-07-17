@@ -112,7 +112,7 @@ export default function WorkflowSection() {
                 </p>
 
                 {/* Card */}
-                <div className="mt-4 p-6 rounded-3xl border border-slate-200 bg-white shadow-sm hover:shadow-xl transition-all duration-300 h-full">
+                <div className="mt-4 p-6 rounded-3xl border border-slate-200 bg-white shadow-sm hover:shadow-xl transition-all duration-300 h-50">
                   <h3 className="text-xl font-semibold text-slate-900">
                     {step.title}
                   </h3>
