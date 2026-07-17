@@ -8,7 +8,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "FleetWise Finance | Expert Financial Planning & Wealth Management",
+  title: "At Olive Investment Services | Expert Financial Planning & Wealth Management",
   description:
     "Build wealth with confidence. Expert financial planning, wealth management, and investment solutions tailored to your unique goals.",
 };

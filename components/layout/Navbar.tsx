@@ -97,16 +97,16 @@ export default function Navbar() {
                 whileHover={{ scale: 1.05, rotate: [0, -5, 5, 0] }}
                 className="h-9 w-9 sm:h-10 sm:w-10 lg:h-11 lg:w-11 rounded-xl bg-linear-to-tr from-blue-600 to-cyan-500 flex items-center justify-center shadow-md shadow-blue-500/20"
               >
-                <span className="text-white font-bold text-sm sm:text-base lg:text-lg tracking-tight">FW</span>
+                <span className="text-white font-bold text-sm sm:text-base lg:text-lg tracking-tight">OI</span>
               </motion.div>
 
               <div className="hidden md:block">
-                <h3 className="font-bold text-sm lg:text-base text-slate-900 tracking-tight transition-colors group-hover:text-blue-600">
-                  FleetWise Wealth
-                </h3>
-                <p className="text-[11px] font-medium uppercase tracking-wider text-slate-400">
+                <h6 className="font-bold text-sm lg:text-base text-slate-900 tracking-tight transition-colors group-hover:text-blue-600">
+                 At Olive Investment Services
+                </h6>
+                {/* <p className="text-[11px] font-medium uppercase tracking-wider text-slate-400">
                   Private Financial Advisory
-                </p>
+                </p> */}
               </div>
             </button>
 

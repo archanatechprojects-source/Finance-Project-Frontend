@@ -22,10 +22,14 @@ import {
 } from "react-icons/fa6";
 import BookingModal from "../BookingModal";
 import { useState } from "react";
+import { useCompanyStats } from "@/lib/useCompanyStats";
+import { formatIndianNumber } from "@/lib/utils";
 
 export default function Footer() {
   const year = new Date().getFullYear();
   const [openBooking, setOpenBooking] = useState(false);
+
+  const stats = useCompanyStats();
 
   return (
     <>
@@ -80,10 +84,10 @@ export default function Footer() {
               <div className="lg:col-span-5">
                 <div className="flex items-center gap-4">
                   <div className="w-14 h-14 rounded-2xl bg-gradient-to-r from-blue-600 to-cyan-500 flex items-center justify-center font-bold text-xl">
-                    FW
+                    OI
                   </div>
                   <div>
-                    <h3 className="text-2xl font-bold">FleetWise Wealth</h3>
+                    <h3 className="text-2xl font-bold">At Olive Investment Services</h3>
                     <p className="text-slate-400">Financial Planning & Advisory</p>
                   </div>
                 </div>
@@ -96,9 +100,9 @@ export default function Footer() {
                 {/* Trust Cards */}
                 <div className="grid grid-cols-3 gap-4 mt-8">
                   {[
-                    { icon: TrendingUp, value: "₹500Cr+", label: "Assets" },
-                    { icon: Award, value: "15+", label: "Years" },
-                    { icon: ShieldCheck, value: "10K+", label: "Clients" },
+                    { icon: TrendingUp, value: formatIndianNumber(stats.assetsManaged), label: "Assets" },
+                    { icon: Award, value: `${stats.yearsInIndustry}+ Years`, label: "Years" },
+                    { icon: ShieldCheck, value: formatIndianNumber(stats.customersServed), label: "Clients" },
                   ].map((item) => {
                     const Icon = item.icon;
                     return (
@@ -195,7 +199,7 @@ export default function Footer() {
             {/* Copyright and Legal Links */}
             <div className="border-t border-white/10 mt-10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
               <p className="text-slate-500 text-sm">
-                &copy; {year} FleetWise Wealth. All Rights Reserved.
+                &copy; {year} At Olive Investment Services. All Rights Reserved.
               </p>
               <div className="flex gap-6 text-sm">
                 {["Privacy Policy", "Terms & Conditions", "Disclaimer"].map((text) => (

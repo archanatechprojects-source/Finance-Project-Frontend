@@ -9,6 +9,8 @@ import {
   Target,
 } from "lucide-react";
 import BookingModal from "../BookingModal";
+import { useCompanyStats } from "@/lib/useCompanyStats";
+import { formatIndianNumber } from "@/lib/utils";
 
 const dashboardSlides = [
   {
@@ -40,6 +42,8 @@ const dashboardSlides = [
 export default function PremiumHero() {
   const [activeSlide, setActiveSlide] = useState(0);
   const [openBooking, setOpenBooking] = useState(false);
+
+  const stats = useCompanyStats();
   
   useEffect(() => {
     const timer = setInterval(() => {
@@ -123,7 +127,7 @@ export default function PremiumHero() {
               <div className="grid grid-cols-3 gap-4 sm:gap-6 mt-12 sm:mt-16 border-t border-slate-200/60 pt-8">
                 <div>
                   <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
-                    ₹500Cr+
+                     ₹{formatIndianNumber(stats.assetsManaged)}
                   </h3>
                   <p className="text-xs sm:text-sm text-slate-500 mt-1 whitespace-nowrap">
                     Assets Managed
@@ -132,7 +136,7 @@ export default function PremiumHero() {
 
                 <div>
                   <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
-                    10K+
+                    {formatIndianNumber(stats.customersServed)}
                   </h3>
                   <p className="text-xs sm:text-sm text-slate-500 mt-1 whitespace-nowrap">
                     Clients Served
@@ -141,7 +145,7 @@ export default function PremiumHero() {
 
                 <div>
                   <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
-                    15+
+                    {stats.yearsInIndustry}+
                   </h3>
                   <p className="text-xs sm:text-sm text-slate-500 mt-1 whitespace-nowrap">
                     Years Experience

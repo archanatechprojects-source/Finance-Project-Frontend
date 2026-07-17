@@ -11,36 +11,42 @@ import {
 } from "lucide-react";
 import BookingModal from "../BookingModal";
 import { useState } from "react";
+import { useCompanyStats } from "@/lib/useCompanyStats";
+import { formatIndianNumber } from "@/lib/utils";
 
-const reasons = [
-  {
-    icon: Award,
-    title: "15+ Years Experience",
-    description:
-      "Deep expertise across wealth management, investments and financial planning.",
-  },
-  {
-    icon: Shield,
-    title: "Transparent Advisory",
-    description:
-      "Clear recommendations with complete transparency and client-first ethics.",
-  },
-  {
-    icon: Users,
-    title: "Personalized Solutions",
-    description:
-      "Strategies tailored around your financial goals, risk profile and future plans.",
-  },
-  {
-    icon: TrendingUp,
-    title: "Growth Focused",
-    description:
-      "Disciplined investing and continuous monitoring for long-term wealth creation.",
-  },
-];
 
 export default function WhyChooseUs() {
   const [openBooking, setOpenBooking] = useState(false);
+
+  const stats = useCompanyStats();
+
+  const reasons = [
+    {
+      icon: Award,
+      title: `${stats.yearsInIndustry}+ Years Experience`,
+      description:
+        "Deep expertise across wealth management, investments and financial planning.",
+    },
+    {
+      icon: Shield,
+      title: "Transparent Advisory",
+      description:
+        "Clear recommendations with complete transparency and client-first ethics.",
+    },
+    {
+      icon: Users,
+      title: "Personalized Solutions",
+      description:
+        "Strategies tailored around your financial goals, risk profile and future plans.",
+    },
+    {
+      icon: TrendingUp,
+      title: "Growth Focused",
+      description:
+        "Disciplined investing and continuous monitoring for long-term wealth creation.",
+    },
+  ];
+
   
   return (
     <>
@@ -90,7 +96,7 @@ export default function WhyChooseUs() {
               <div className="grid grid-cols-2 gap-6 sm:gap-8 mt-12 sm:mt-16 border-t border-slate-200/60 pt-8">
                 <div>
                   <h3 className="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">
-                    ₹500Cr+
+                    ₹{formatIndianNumber(stats.assetsManaged)}
                   </h3>
                   <p className="text-sm text-slate-500 mt-1">
                     Assets Managed
@@ -99,7 +105,7 @@ export default function WhyChooseUs() {
 
                 <div>
                   <h3 className="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">
-                    10K+
+                    {formatIndianNumber(stats.customersServed)}
                   </h3>
                   <p className="text-sm text-slate-500 mt-1">
                     Clients Served
@@ -108,7 +114,7 @@ export default function WhyChooseUs() {
 
                 <div>
                   <h3 className="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">
-                    15+
+                    {stats.yearsInIndustry}+
                   </h3>
                   <p className="text-sm text-slate-500 mt-1">
                     Years Experience

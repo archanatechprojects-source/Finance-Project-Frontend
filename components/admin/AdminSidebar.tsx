@@ -43,6 +43,7 @@ export default function AdminSidebar({ isOpen, setIsOpen }: SidebarProps) {
     { name: "Queries", href: "/admin/queries", icon: MessageSquareQuoteIcon, permission: "QUERY_VIEW" },
     { name: "Investments", href: "/admin/investments", icon: TrendingUp, permission: "INVESTMENT_VIEW" },
     { name: "Admins", href: "/admin/admins", icon: ShieldCheck, permission: "ADMIN_VIEW" },
+    { name: "Company Stats", href: "/admin/company-stats", icon: Building2, permission: "SETTINGS_EDIT" },
   ];
 
   const logout = () => {
@@ -66,7 +67,7 @@ export default function AdminSidebar({ isOpen, setIsOpen }: SidebarProps) {
             <Building2 size={18} />
           </div>
           <h2 className="font-extrabold text-lg text-white tracking-tight">
-            FleetWise <span className="text-blue-500 font-medium text-xs ml-1 px-1.5 py-0.5 rounded bg-blue-500/10">Admin</span>
+             Olive Investment <span className="text-blue-500 font-medium text-xs ml-1 px-1.5 py-0.5 rounded bg-blue-500/10">Admin</span>
           </h2>
         </div>
 

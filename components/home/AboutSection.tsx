@@ -1,5 +1,7 @@
 "use client";
 
+import { useCompanyStats } from "@/lib/useCompanyStats";
+import { formatIndianNumber } from "@/lib/utils";
 import { motion } from "framer-motion";
 import {
   ShieldCheck,
@@ -31,30 +33,33 @@ const highlights = [
   },
 ];
 
-const cards = [
-  {
-    title: "Wealth Management",
-    value: "₹500Cr+",
-    desc: "Assets Under Advisory",
-  },
-  {
-    title: "Satisfied Clients",
-    value: "10,000+",
-    desc: "Across India & NRI Investors",
-  },
-  {
-    title: "Experience",
-    value: "15+ Years",
-    desc: "Helping families build wealth",
-  },
-  {
-    title: "Success Rate",
-    value: "98%",
-    desc: "Client retention & satisfaction",
-  },
-];
-
 export default function AboutSection() {
+
+  const stats = useCompanyStats();
+
+  const cards = [
+    {
+      title: "Wealth Management",
+      value: formatIndianNumber(stats.assetsManaged),
+      desc: "Assets Under Advisory",
+    },
+    {
+      title: "Satisfied Clients",
+      value: formatIndianNumber(stats.customersServed),
+      desc: "Across India & NRI Investors",
+    },
+    {
+      title: "Experience",
+      value: `${stats.yearsInIndustry}+ Years`,
+      desc: "Helping families build wealth",
+    },
+    {
+      title: "Portfolios",
+      value: `${stats.portfolios}+`,
+      desc: "Successfully Managed",
+    },
+  ];
+
   return (
     <section
       id="about"
@@ -78,7 +83,7 @@ export default function AboutSection() {
             transition={{ duration: 0.6 }}
           >
             <span className="inline-block px-4 py-1.5 rounded-full bg-blue-500/20 text-cyan-400 text-sm font-medium border border-cyan-500/20">
-              About FleetWise
+              About Olive Investment Services
             </span>
 
             <h2 className="mt-4 text-3xl sm:text-4xl md:text-5xl font-bold leading-tight tracking-tight">
@@ -89,7 +94,7 @@ export default function AboutSection() {
             </h2>
 
             <p className="mt-6 text-slate-400 text-base sm:text-lg leading-relaxed">
-              At FleetWise Wealth Management, we combine technology,
+              At Olive Investment Services, we combine technology,
               research, and personalized financial planning to help
               investors make smarter financial decisions.
             </p>

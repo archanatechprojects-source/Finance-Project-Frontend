@@ -37,7 +37,7 @@ export default function AdminLayout({
               <div className="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center text-white text-xs font-bold">
                 FW
               </div>
-              <span className="font-extrabold text-sm text-white tracking-tight">FleetWise</span>
+              <span className="font-extrabold text-sm text-white tracking-tight">At Olive Investment Services</span>
             </div>
             
             <button
