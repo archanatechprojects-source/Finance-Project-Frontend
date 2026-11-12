@@ -32,9 +32,18 @@ export default function Navbar() {
   const scrollToSection = (id: string) => {
     const section = document.getElementById(id);
     if (section) {
-      section.scrollIntoView({
+      const header = document.querySelector("header");
+      const headerBottom = header?.getBoundingClientRect().bottom ?? 0;
+      const sectionTop = section.getBoundingClientRect().top + window.scrollY;
+      const sectionPaddingTop =
+        Number.parseFloat(window.getComputedStyle(section).paddingTop) || 0;
+
+      window.scrollTo({
+        top: Math.max(
+          0,
+          sectionTop - (headerBottom + 16 - sectionPaddingTop)
+        ),
         behavior: "smooth",
-        block: "start",
       });
     }
     setIsOpen(false);

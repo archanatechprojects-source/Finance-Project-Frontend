@@ -59,8 +59,7 @@ export default function PremiumHero() {
     <>
       <section
         id="home"
-        // FIXED: Added deliberate pt-28 on small screens to prevent navbar overlap, and min-h-screen centering for large viewports
-        className="relative min-h-screen flex items-center overflow-hidden bg-[#f8fbff] pt-28 pb-12 md:pt-36 lg:py-0"
+        className="relative min-h-screen flex items-center overflow-hidden bg-[#f8fbff] pt-28 pb-12 md:pt-36 lg:pt-36 lg:pb-12"
       >
         {/* Background Decorative Blobs */}
         <div className="absolute inset-0 pointer-events-none">
